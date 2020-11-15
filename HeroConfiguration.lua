@@ -26,6 +26,76 @@ local function OnTrackingInfo(i, value, name)
 	Log("Defined tracking " .. name .. " : " .. tostring(value));
 end
 
+local function ConfigureTracking()
+	local count = GetNumTrackingTypes();
+	for i=1, count do
+		local name = GetTrackingInfo(i);
+		if (name == TRACKING_LOW_LEVEL_QUESTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_LOW_LEVEL_QUESTS);
+		elseif (name == TRACKING_FLY_MASTER) then
+			OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_FLY_MASTER);
+		elseif (name == TRACKING_ARCHAEOLOGY_SITES) then
+			OnTrackingInfo(i, HeroConfiguration.trackArchaeologySites, TRACKING_ARCHAEOLOGY_SITES);
+		elseif (name == TRACKING_MINE_SPOTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackMineSpots, TRACKING_MINE_SPOTS);
+		elseif (name == TRACKING_HERB_SPOTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackHerbSpots, TRACKING_HERB_SPOTS);
+		elseif (name == TRACKING_FISH_SPOTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackFishSpots, TRACKING_FISH_SPOTS);
+		elseif (name == TRACKING_TREASURE_SPOTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackTreasureSpots, TRACKING_TREASURE_SPOTS);
+		elseif (name == TRACKING_QUESTS_SPOTS) then
+			OnTrackingInfo(i, HeroConfiguration.trackQuestsSpots, TRACKING_QUESTS_SPOTS);
+		else
+			SetTracking(i, false);
+			Log("Defined tracking " .. name .. " : false (default)");
+		end
+	end
+end
+
+local function ConfigureScreenshots()
+	SetCVar("screenshotFormat", "tga");
+	SetCVar("screenshotQuality", 10);
+end
+
+local function ConfigureUnitNames()
+	SetCVar("UnitNameNPC", 1);
+	SetCVar("UnitNameOwn", 0);
+	SetCVar("UnitNamePlayerGuild", 0);
+	SetCVar("UnitNamePlayerPVPTitle", 0);
+	SetCVar("UnitNameEnemyGuardianName", 1);
+	SetCVar("UnitNameEnemyPetName", 0);
+	SetCVar("UnitNameEnemyMinionName", 0);
+	SetCVar("UnitNameEnemyPlayerName", 1);
+	SetCVar("UnitNameEnemyTotemName", 0);
+	SetCVar("UnitNameFriendlyGuardianName", 1);
+	SetCVar("UnitNameFriendlyPetName", 0);
+	SetCVar("UnitNameFriendlyMinionName", 0);
+	SetCVar("UnitNameFriendlyPlayerName", 1);
+	SetCVar("UnitNameFriendlyTotemName", 0);
+end
+
+local function ConfigureNameplates()
+	SetCVar("nameplateShowSelf", 1);
+	SetCVar("NameplatePersonalShowAlways", 0);
+	SetCVar("NameplatePersonalShowInCombat", 1);
+	SetCVar("NameplatePersonalShowWithTarget", 1);
+end
+
+local function ConfigureMisc()
+	SetCVar("autoLootDefault", 1);
+	SetCVar("buffDurations", 1);
+	SetCVar("consolidateBuffs", 0);
+	SetCVar("chatBubbles", 0);
+	SetCVar("chatBubblesParty", 0);
+	SetCVar("chatMouseScroll", 1);
+	SetCVar("removeChatDelay", 1);
+	SetCVar("instantQuestText", 1);
+	SetCVar("showTutorials", 0);
+	SetCVar("violenceLevel", 5);
+	SetCVar("showDungeonEntrancesOnMap", 1);
+end
+
 frame:SetScript("OnEvent", function(self, event, ...)
 	local arg = {...}
 
@@ -60,30 +130,11 @@ frame:SetScript("OnEvent", function(self, event, ...)
 	end
 
 	if (event == "PLAYER_ENTERING_WORLD") then
-		local count = GetNumTrackingTypes();
-		for i=1, count do
-			local name = GetTrackingInfo(i);
-			if (name == TRACKING_LOW_LEVEL_QUESTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_LOW_LEVEL_QUESTS);
-			elseif (name == TRACKING_FLY_MASTER) then
-				OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_FLY_MASTER);
-			elseif (name == TRACKING_ARCHAEOLOGY_SITES) then
-				OnTrackingInfo(i, HeroConfiguration.trackArchaeologySites, TRACKING_ARCHAEOLOGY_SITES);
-			elseif (name == TRACKING_MINE_SPOTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackMineSpots, TRACKING_MINE_SPOTS);
-			elseif (name == TRACKING_HERB_SPOTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackHerbSpots, TRACKING_HERB_SPOTS);
-			elseif (name == TRACKING_FISH_SPOTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackFishSpots, TRACKING_FISH_SPOTS);
-			elseif (name == TRACKING_TREASURE_SPOTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackTreasureSpots, TRACKING_TREASURE_SPOTS);
-			elseif (name == TRACKING_QUESTS_SPOTS) then
-				OnTrackingInfo(i, HeroConfiguration.trackQuestsSpots, TRACKING_QUESTS_SPOTS);
-			else
-				SetTracking(i, false);
-				Log("Defined tracking " .. name .. " : false (default)");
-			end
-		end
+		ConfigureTracking();
+		ConfigureScreenshots();
+		ConfigureUnitNames();
+		ConfigureNameplates();
+		ConfigureMisc();
 	end
 
 end)
