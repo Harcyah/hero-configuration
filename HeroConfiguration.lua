@@ -99,6 +99,7 @@ local function ConfigureSound()
 end
 
 local function ConfigureUI()
+	SetCVar('statusTextDisplay', 'NUMERIC');
 	SetCVar('uiScale', '0.64999997615814');
 	SetCVar('useUiScale', '1');
 end
