@@ -94,6 +94,8 @@ end
 local function ConfigureSound()
 	SetCVar('Sound_EnableErrorSpeech', '0');
 	SetCVar('Sound_EnableMusic', '0');
+	SetCVar('Sound_EnableSoundWhenGameIsInBG', '1');
+	SetCVar('Sound_MasterVolume', '0.29100000858307');
 end
 
 local function ConfigureUI()
