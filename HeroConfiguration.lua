@@ -86,7 +86,9 @@ local function ConfigureChat()
 	SetCVar('chatBubbles', 0);
 	SetCVar('chatBubblesParty', 0);
 	SetCVar('chatMouseScroll', 1);
+	SetCVar('chatStyle', 'classic');
 	SetCVar('removeChatDelay', 1);
+	SetCVar('showTimestamps', '%H:%M:%S');
 end
 
 local function ConfigureSound()
@@ -104,9 +106,9 @@ local function ConfigureMisc()
 	SetCVar('buffDurations', 1);
 	SetCVar('consolidateBuffs', 0);
 	SetCVar('instantQuestText', 1);
+	SetCVar('showDungeonEntrancesOnMap', 1);
 	SetCVar('showTutorials', 0);
 	SetCVar('violenceLevel', 5);
-	SetCVar('showDungeonEntrancesOnMap', 1);
 end
 
 frame:SetScript('OnEvent', function(self, event, ...)
