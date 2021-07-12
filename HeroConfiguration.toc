@@ -1,5 +1,5 @@
 ## Title: HeroConfiguration
-## Interface: 90002
+## Interface: 90100
 ## Author: harcyah@gmail.com
 ## Notes: Auto game configuration !
 ## SavedVariablesPerCharacter: HeroConfiguration
