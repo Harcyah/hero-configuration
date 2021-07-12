@@ -108,6 +108,7 @@ local function ConfigureMisc()
 	SetCVar('buffDurations', 1);
 	SetCVar('consolidateBuffs', 0);
 	SetCVar('instantQuestText', 1);
+	SetCVar('scriptErrors', '1');
 	SetCVar('showDungeonEntrancesOnMap', 1);
 	SetCVar('showTutorials', 0);
 	SetCVar('violenceLevel', 5);
