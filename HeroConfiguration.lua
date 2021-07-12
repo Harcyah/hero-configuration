@@ -82,14 +82,27 @@ local function ConfigureNameplates()
 	SetCVar('NameplatePersonalShowWithTarget', 1);
 end
 
-local function ConfigureMisc()
-	SetCVar('autoLootDefault', 1);
-	SetCVar('buffDurations', 1);
-	SetCVar('consolidateBuffs', 0);
+local function ConfigureChat()
 	SetCVar('chatBubbles', 0);
 	SetCVar('chatBubblesParty', 0);
 	SetCVar('chatMouseScroll', 1);
 	SetCVar('removeChatDelay', 1);
+end
+
+local function ConfigureSound()
+	SetCVar('Sound_EnableErrorSpeech', '0');
+	SetCVar('Sound_EnableMusic', '0');
+end
+
+local function ConfigureUI()
+	SetCVar('uiScale', '0.64999997615814');
+	SetCVar('useUiScale', '1');
+end
+
+local function ConfigureMisc()
+	SetCVar('autoLootDefault', 1);
+	SetCVar('buffDurations', 1);
+	SetCVar('consolidateBuffs', 0);
 	SetCVar('instantQuestText', 1);
 	SetCVar('showTutorials', 0);
 	SetCVar('violenceLevel', 5);
@@ -134,6 +147,9 @@ frame:SetScript('OnEvent', function(self, event, ...)
 		ConfigureScreenshots();
 		ConfigureUnitNames();
 		ConfigureNameplates();
+		ConfigureChat();
+		ConfigureSound();
+		ConfigureUI();
 		ConfigureMisc();
 	end
 
