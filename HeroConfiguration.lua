@@ -33,7 +33,7 @@ local function ConfigureTracking()
 		if (name == TRACKING_LOW_LEVEL_QUESTS) then
 			OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_LOW_LEVEL_QUESTS);
 		elseif (name == TRACKING_FLY_MASTER) then
-			OnTrackingInfo(i, HeroConfiguration.trackLowLevelQuests, TRACKING_FLY_MASTER);
+			OnTrackingInfo(i, HeroConfiguration.trackFlyMaster, TRACKING_FLY_MASTER);
 		elseif (name == TRACKING_ARCHAEOLOGY_SITES) then
 			OnTrackingInfo(i, HeroConfiguration.trackArchaeologySites, TRACKING_ARCHAEOLOGY_SITES);
 		elseif (name == TRACKING_MINE_SPOTS) then
