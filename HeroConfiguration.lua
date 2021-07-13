@@ -101,6 +101,7 @@ end
 local function ConfigureUI()
 	SetCVar('cameraSmoothStyle', '0');
 	SetCVar('statusTextDisplay', 'NUMERIC');
+	SetCVar('threatShowNumeric', '1');
 	SetCVar('uiScale', '0.64999997615814');
 	SetCVar('useUiScale', '1');
 end
