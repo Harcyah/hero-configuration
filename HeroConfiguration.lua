@@ -113,6 +113,7 @@ local function ConfigureMisc()
 	SetCVar('instantQuestText', 1);
 	SetCVar('scriptErrors', '1');
 	SetCVar('showDungeonEntrancesOnMap', 1);
+	SetCVar('showTargetOfTarget', 1);
 	SetCVar('showTutorials', 0);
 	SetCVar('taintlog', 2);
 	SetCVar('violenceLevel', 5);
