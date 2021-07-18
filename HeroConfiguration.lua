@@ -117,6 +117,7 @@ local function ConfigureMisc()
 	SetCVar('showTutorials', 0);
 	SetCVar('taintlog', 2);
 	SetCVar('violenceLevel', 5);
+	SetCVar('xpBarText', 1);
 end
 
 frame:SetScript('OnEvent', function(self, event, ...)
